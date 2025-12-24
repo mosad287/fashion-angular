@@ -1,0 +1,32 @@
+<div class="container py-5">
+  <div class="row align-items-center justify-content-center">
+    @for (product of products(); track product.product.id) {
+    <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+      <div class="p-2 mycard">
+        <img
+          [src]="product.product.imageCover"
+          width="100%"
+          class="rounded-top-2"
+          alt="error"
+        />
+        <div class="p-3">
+          <div class="d-flex align-items-center justify-content-between">
+            <h5>EGP {{ product.price }}</h5>
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-trash text-danger cr"></i>
+              <i
+                class="fa-solid fa-plus text-success cr"
+                (click)="addProduct(product.product.id)"
+              ></i>
+            </div>
+          </div>
+          <hr />
+          <p class="text-secondary">
+            {{ product.product.title.split(" ", 3).join(" ") }}...
+          </p>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

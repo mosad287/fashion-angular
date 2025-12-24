@@ -1,0 +1,50 @@
+<div class="container py-5">
+  <div class="overflow-x-auto">
+    <h2 class="text-center text-primary-emphasis fw-semibold mb-4">
+      {{ "admin.addproduct" | translate }}
+    </h2>
+
+    @if (productNotAdded().length > 0) {
+    <table class="table table-striped overflow-y-auto">
+      <thead class="table-secondary">
+        <tr>
+          <th scope="col">{{ " " }}</th>
+          <th scope="col ">{{ "admin.product" | translate }}</th>
+          <th scope="col ">{{ "admin.price" | translate }}</th>
+          <th scope="col ">{{ "admin.view" | translate }}</th>
+          <th scope="col ">{{ "admin.add" | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (product of productNotAdded(); track product.id) {
+
+        <tr class="align-middle">
+          <th scope="row">{{ " " }}</th>
+          <td>
+            <img [src]="product.imageCover" width="50px" alt="error" />
+          </td>
+          <td>{{ product.price }}</td>
+          <td>
+            <button
+              class="btn btn-primary"
+              [routerLink]="['/admin/products', product.id]"
+            >
+              {{ "admin.view" | translate }}
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-success" (click)="addProduct(product.id)">
+              {{ "admin.add" | translate }}
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    } @else{
+    <div class="text-center text-secondary pt-4">
+      <h1 class="fw-bold">{{ "admin.noproduct" | translate }}</h1>
+    </div>
+    }
+  </div>
+</div>

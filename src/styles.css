@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+.mainpadding {
+  padding-top: 3.5em;
+}
+
+.cr {
+  cursor: pointer;
+}
+
+.dropimg {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.dropdown-menu-end-en {
+  right: auto !important;
+  left: 0 !important;
+  transform: translateX(0) !important;
+}
+
+.dropdown-menu-end-ar {
+  right: 0 !important;
+  left: auto !important;
+  transform: translateX(0) !important;
+}
+
+.formwidth {
+  width: 50%;
+}
+
+.mycard {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (min-width: 992px) {
+  .dropdown-menu-end-en {
+    right: 0 !important;
+    left: auto !important;
+    transform: translateX(0) !important;
+  }
+
+  .dropdown-menu-end-ar {
+    right: auto !important;
+    left: 0 !important;
+    transform: translateX(0) !important;
+  }
+}
+
+@media screen and (max-width: 776px) {
+  .formwidth {
+    width: 100%;
+  }
+}

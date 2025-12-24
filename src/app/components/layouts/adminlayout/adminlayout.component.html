@@ -1,0 +1,17 @@
+<div>
+  <app-adminnavbar></app-adminnavbar>
+
+  <div class="row">
+    <div class="col-md-2 bg-secondary-subtle p-2 dashdiv">
+      <h5 class="fw-bold cr margintop" routerLink="/admin">
+        {{ "admin.dashbord" | translate }}
+      </h5>
+      <h5 class="fw-bold cr" routerLink="/admin/products">
+        {{ "admin.products" | translate }}
+      </h5>
+    </div>
+    <div class="col-md-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

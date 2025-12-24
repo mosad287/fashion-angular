@@ -1,0 +1,14 @@
+.divwidth {
+  width: 40%;
+}
+
+.divposition {
+  position: sticky;
+  top: 100px;
+}
+
+@media screen and (max-width: 776px) {
+  .divwidth {
+    width: 80%;
+  }
+}

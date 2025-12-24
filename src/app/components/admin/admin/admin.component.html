@@ -1,0 +1,27 @@
+<div class="container py-5">
+  <div class="row px-3 py-5 align-items-center justify-content-center">
+    <div
+      class="col-md-5 px-2 py-3 text-center bg-dark-subtle text-dark rounded-2"
+    >
+      <h3 class="fw-bold">{{ "admin.products" | translate }}</h3>
+      <h5 class="fw-semibold text-center">
+        {{ "admin.numberofproducts" | translate }} :
+        <span class="text-success">{{ productsNumber() }}</span>
+      </h5>
+      <h5 class="fw-semibold text-center">
+        {{ "admin.lastproductadded" | translate }} : @if (lastProductAdd()) {
+        <span class="text-success">{{
+          lastProductAdd()?.product?.title?.split(" ", 2)?.join(" ")
+        }}</span>
+        }
+      </h5>
+      <div
+        class="d-flex flex-column align-items-center justify-content-center mt-3"
+      >
+        <button class="btn btn-primary" routerLink="/admin/products">
+          {{ "admin.allproduct" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

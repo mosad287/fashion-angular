@@ -1,0 +1,13 @@
+.divwidth {
+  width: 75%;
+}
+
+.divground {
+  background-color: rgb(17, 17, 49);
+}
+
+@media screen and (max-width: 560px) {
+  .divwidth {
+    width: 100%;
+  }
+}

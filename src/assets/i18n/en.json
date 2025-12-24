@@ -1,0 +1,86 @@
+{
+  "navbar": {
+    "home": "Home",
+    "shop": "Shop",
+    "profile": "Profilr",
+    "signout": "Sign Out",
+    "control": "Control",
+    "lang": "lang",
+    "en": "English",
+    "ar": "Arabic"
+  },
+  "footer": {
+    "footerparagraph": "The customer is at the heart of our unique business model, which includes design.",
+    "shopping": "SHOPPING",
+    "about": "About US",
+    "partner": "PARTNER",
+    "newliter": "NEWLITTER",
+    "newliterparagraph": "Stay updated with our latest news and updates."
+  },
+  "login": {
+    "login": "LOG IN",
+    "create": "CREATE NEW ACCOUNT",
+    "email": "Email",
+    "password": "Password"
+  },
+  "regester": {
+    "name": "Name",
+    "repassword": "RePassword",
+    "phone": "Phone",
+    "new": "NEW ACCOUNT",
+    "error": {
+      "namerequired": "name must be required",
+      "namelynath": "name must be more than 3 char",
+      "emailrequired": "email must be required",
+      "email": "must write true email",
+      "passwordrequired": "password must be required",
+      "passwordpattern": "password must be more than 6 char",
+      "repassword": "repassword must me matched full with password",
+      "phonereqired": "phone must be required",
+      "phonepattern": "phone must be egyption phone"
+    }
+  },
+  "signoutmodal": {
+    "title": "SIGN OUT",
+    "body": "If you need to signout press at Out",
+    "close": "Close",
+    "out": "Out"
+  },
+  "home": {
+    "homebackground": {
+      "summer": "SUMMER COIIECTION",
+      "title": "Fall - Winter Collections 2025",
+      "paragraph": "A specialist label creating luxury essentials. Ethically crafted with an unwavering commitment to exceptional quality",
+      "button": "Shop Now"
+    },
+    "homecategories": {
+      "clothing": "Clothing",
+      "accessories": "Accessories",
+      "shoesspring": "Shoes Spring",
+      "button": "SHOP NOW",
+      "free": "Free shopping, 30-day return or refund guarantee"
+    }
+  },
+  "profile": {
+    "profile": "Profile",
+    "role": "Role",
+    "editprofile": "Edit Profile",
+    "edit": "Edit",
+    "back": "Back"
+  },
+  "admin": {
+    "home": "Home",
+    "dashbord": "Dashbord",
+    "products": "Products",
+    "numberofproducts": "Number Of Products",
+    "lastproductadded": "Last Product Added",
+    "allproduct": "All Products",
+    "addproduct": "Add Product",
+    "product": "Product",
+    "price": "Price",
+    "view": "View",
+    "remove": "Remove",
+    "add": "Add",
+    "noproduct": "No Product To Added"
+  }
+}

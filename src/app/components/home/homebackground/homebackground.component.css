@@ -1,0 +1,28 @@
+.main {
+  padding: 10em 0px;
+  background-image: url("../../../../assets/img/hero/hero-1.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
+.rtl {
+  transform: scaleX(-1);
+}
+
+.rtl * {
+  transform: scaleX(-1);
+}
+
+.rtl button {
+  transform: scaleX(1);
+}
+
+.width {
+  width: 50%;
+}
+
+@media screen and (max-width: 776px) {
+  .width {
+    width: 100%;
+  }
+}

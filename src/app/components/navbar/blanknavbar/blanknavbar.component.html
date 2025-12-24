@@ -1,0 +1,137 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top mycard">
+  <div class="container">
+    <img src="./assets/img/logo.png" width="150px" alt="error" class="mb-2" />
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            routerLink="/home"
+            routerLinkActive="text-dark"
+            class="nav-link cr fs-6 fw-bold"
+            >{{ "navbar.home" | translate }}</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            routerLink="/shop"
+            routerLinkActive="text-dark"
+            class="nav-link cr fs-6 fw-bold"
+            >{{ "navbar.shop" | translate }}</a
+          >
+        </li>
+      </ul>
+      <div class="d-flex flex-row align-content-center gap-3">
+        <div
+          class="d-flex flex-column justify-content-center align-content-center"
+        >
+          <app-langdropdown></app-langdropdown>
+        </div>
+
+        <div
+          class="d-flex flex-column justify-content-center align-content-center position-relative"
+        >
+          <i class="fa-solid fa-cart-arrow-down fs-4 cr" routerLink="/cart"></i>
+
+          @if( _CartService.productsLength() > 1){
+          <span
+            class="position-absolute top-0 start-0 translate-middle mt-2 rounded-1 px-1 text-white bg-danger border border-light"
+          >
+            <span>{{ _CartService.productsLength() }}</span>
+          </span>
+          }
+        </div>
+
+        <div class="dropdown">
+          <img
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            src="https://tecdn.b-cdn.net/img/new/avatars/2.webp"
+            class="dropimg cr"
+            alt="error"
+          />
+
+          <ul
+            [ngClass]="{
+              'dropdown-menu-end-ar': _TranslationService.checkLang() === true,
+              'dropdown-menu-end-en': _TranslationService.checkLang() === false
+            }"
+            class="dropdown-menu"
+          >
+            @if (isAdmin()) {
+            <li class="cr" routerLink="/admin">
+              <a class="dropdown-item fw-bolder">{{
+                "navbar.control" | translate
+              }}</a>
+            </li>
+            }
+
+            <li class="cr" routerLink="/profile">
+              <a class="dropdown-item fw-bolder">{{
+                "navbar.profile" | translate
+              }}</a>
+            </li>
+
+            <li
+              class="cr"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              <a class="text-danger dropdown-item fw-bolder">{{
+                "navbar.signout" | translate
+              }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div
+        class="d-flex flex-row justify-content-between align-content-center py-2 px-4"
+      >
+        <h1 class="modal-title fs-5 text-danger" id="exampleModalLabel">
+          {{ "signoutmodal.title" | translate }}
+        </h1>
+        <button
+          type="button"
+          class="btn-close mt-2"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <hr />
+      <div class="modal-body">{{ "signoutmodal.body" | translate }}</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          {{ "signoutmodal.close" | translate }}
+        </button>
+        <button type="button" class="btn btn-danger" (click)="signOut()">
+          {{ "signoutmodal.out" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

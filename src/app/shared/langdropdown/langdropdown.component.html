@@ -1,0 +1,25 @@
+<div class="dropdown">
+  <h5
+    class="text-center my-auto nav-link dropdown-toggle cr"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    {{ "navbar.lang" | translate }}
+  </h5>
+
+  <ul
+    [ngClass]="{
+      'dropdown-menu-end-ar': _TranslationService.checkLang() === true,
+      'dropdown-menu-end-en': _TranslationService.checkLang() === false
+    }"
+    class="dropdown-menu"
+  >
+    <li class="cr" (click)="_TranslationService.changeLang('en')">
+      <a class="dropdown-item fw-bolder">{{ "navbar.en" | translate }}</a>
+    </li>
+
+    <li class="cr" (click)="_TranslationService.changeLang('ar')">
+      <a class="dropdown-item fw-bolder">{{ "navbar.ar" | translate }}</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,53 @@
+<div class="container py-5">
+  <div class="overflow-x-auto">
+    <h2 class="text-center text-primary-emphasis fw-semibold">
+      {{ "admin.products" | translate }}
+    </h2>
+
+    <div>
+      <button
+        class="btn btn-success mb-3"
+        routerLink="/admin/product/addproduct"
+      >
+        {{ "admin.addproduct" | translate }}
+      </button>
+    </div>
+
+    <table class="table table-striped overflow-y-auto">
+      <thead class="table-secondary">
+        <tr>
+          <th scope="col">{{ " " }}</th>
+          <th scope="col ">{{ "admin.product" | translate }}</th>
+          <th scope="col ">{{ "admin.price" | translate }}</th>
+          <th scope="col ">{{ "admin.view" | translate }}</th>
+          <th scope="col ">{{ "admin.remove" | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (product of products(); track product.product.id) {
+
+        <tr class="align-middle">
+          <th scope="row">{{ " " }}</th>
+          <td>
+            <img [src]="product.product.imageCover" width="50px" alt="error" />
+          </td>
+          <td>{{ product.price }}</td>
+          <td>
+            <button
+              class="btn btn-primary"
+              [routerLink]="['/admin/products', product.product.id]"
+            >
+              {{ "admin.view" | translate }}
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="remove(product.product.id)">
+              {{ "admin.remove" | translate }}
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
