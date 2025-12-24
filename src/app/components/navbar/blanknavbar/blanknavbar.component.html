@@ -72,16 +72,26 @@
           >
             @if (isAdmin()) {
             <li class="cr" routerLink="/admin">
-              <a class="dropdown-item fw-bolder">{{
-                "navbar.control" | translate
-              }}</a>
+              <a
+                [ngClass]="{
+                  'text-end': _TranslationService.checkLang() === true,
+                  'text-start': _TranslationService.checkLang() === false
+                }"
+                class="dropdown-item fw-bolder"
+                >{{ "navbar.control" | translate }}</a
+              >
             </li>
             }
 
             <li class="cr" routerLink="/profile">
-              <a class="dropdown-item fw-bolder">{{
-                "navbar.profile" | translate
-              }}</a>
+              <a
+                [ngClass]="{
+                  'text-end': _TranslationService.checkLang() === true,
+                  'text-start': _TranslationService.checkLang() === false
+                }"
+                class="dropdown-item fw-bolder"
+                >{{ "navbar.profile" | translate }}</a
+              >
             </li>
 
             <li
@@ -89,9 +99,14 @@
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
-              <a class="text-danger dropdown-item fw-bolder">{{
-                "navbar.signout" | translate
-              }}</a>
+              <a
+                [ngClass]="{
+                  'text-end': _TranslationService.checkLang() === true,
+                  'text-start': _TranslationService.checkLang() === false
+                }"
+                class="text-danger dropdown-item fw-bolder"
+                >{{ "navbar.signout" | translate }}</a
+              >
             </li>
           </ul>
         </div>

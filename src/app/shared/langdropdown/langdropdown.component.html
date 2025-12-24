@@ -15,11 +15,25 @@
     class="dropdown-menu"
   >
     <li class="cr" (click)="_TranslationService.changeLang('en')">
-      <a class="dropdown-item fw-bolder">{{ "navbar.en" | translate }}</a>
+      <a
+        [ngClass]="{
+          'text-end': _TranslationService.checkLang() === true,
+          'text-start': _TranslationService.checkLang() === false
+        }"
+        class="dropdown-item fw-bolder"
+        >{{ "navbar.en" | translate }}</a
+      >
     </li>
 
     <li class="cr" (click)="_TranslationService.changeLang('ar')">
-      <a class="dropdown-item fw-bolder">{{ "navbar.ar" | translate }}</a>
+      <a
+        [ngClass]="{
+          'text-end': _TranslationService.checkLang() === true,
+          'text-start': _TranslationService.checkLang() === false
+        }"
+        class="dropdown-item fw-bolder"
+        >{{ "navbar.ar" | translate }}</a
+      >
     </li>
   </ul>
 </div>
